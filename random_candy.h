@@ -1,6 +1,7 @@
 #ifndef RANDOM_CANDY_H
 #define RANDOM_CANDY_H
 
+#include "candy.h"
 
 class Random_candy
 {
