@@ -19,6 +19,8 @@ public:
     Candy(COLOR color)  : color(color){}
     ~Candy() {}
 
+    const COLOR color;
+
     COLOR getColor() const  // get color for combo checker
     {
         return color;
@@ -26,11 +28,28 @@ public:
 
     void print()    // print color for testing
     {
-        std::cout << color;
+        switch(color)
+        {
+        case RED:
+            std::cout << "R\n";
+            break;
+        case BLUE:
+            std::cout << "B\n";
+            break;
+        case GREEN:
+            std::cout << "G\n";
+            break;
+        case YELLOW:
+            std::cout << "O\n";
+            break;
+        case ORANGE:
+            std::cout << "Y\n";
+            break;
+        default:
+            std::cout << "no color\n";
+            break;
+        }
     }
-
-private:
-    const COLOR color;  // can't be changed
 };
 
 #endif // CANDY_H
