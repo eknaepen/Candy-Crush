@@ -7,10 +7,19 @@
 class Field
 {
 public:
-    unsigned int x;
-    unsigned int y;
+    int x;
+    int y;
 
-    Field();
+    enum type
+    {
+        empty,  //moet gevuld worden
+        candy,  //is al gevuld
+        wall    //kan niet gevuld worden
+    };
+
+    Field(int r, int c);
+    ~Field();
+
 };
 
 #endif // FIELD_H
