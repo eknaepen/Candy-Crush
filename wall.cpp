@@ -1,6 +1,12 @@
-#include "wall.h"
+#ifndef WALL_H
+#define WALL_H
 
-Wall::Wall()
+
+class Wall
 {
+public:
+    Wall();
+    ~Wall();
+};
 
-}
+#endif // WALL_H
