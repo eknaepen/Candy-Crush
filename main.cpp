@@ -1,8 +1,43 @@
-#include <QCoreApplication>
+#include <iostream>
+#include "game.h"
+using namespace std;
 
-int main(int argc, char *argv[])
+typedef enum{StartUp, Play, Reset, End}GameMode; // set-up for state machine
+GameMode NextState=StartUp;
+
+int loop=0;
+int reset;
+
+int main()
 {
-    QCoreApplication a(argc, argv);
-
-    return a.exec();
+    while(loop==0)
+    {
+        switch(NextState)
+        {
+            case StartUp:
+                Game * game;        // make a game
+                NextState=Play;
+                break;
+            case Play:
+                game = new Game;    // new game
+                NextState=Reset;
+                break;
+            case Reset:
+                cout << "play again press 1: ";
+                cin >> reset;       // reset yes=1
+                if(reset==1)
+                {
+                    NextState=Play;
+                }
+                else
+                {
+                    NextState=End;  // shutdown program
+                }
+                break;
+            case End:
+                loop=1;
+                break;
+        }
+    }
+    return 0;
 }
