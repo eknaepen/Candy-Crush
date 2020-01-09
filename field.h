@@ -1,24 +1,14 @@
 #ifndef FIELD_H
 #define FIELD_H
-#include "candy_field.h"
-#include "wall.h"
-#include "random_candy.h"
+#include <stdio.h>
+#include <string.h>
 
 class Field
 {
 public:
-    int x;
-    int y;
-
-    enum type
-    {
-        empty,  //moet gevuld worden
-        candy,  //is al gevuld
-        wall    //kan niet gevuld worden
-    };
-
-    Field(int r, int c);
-    ~Field();
+    virtual unsigned char setsign()=0;  // virtual fuction --> childeren use it to set "sign"
+protected:
+    unsigned char sign;     // sign to fill the grid
 
 };
 
