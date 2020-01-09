@@ -1,55 +1,57 @@
 #ifndef CANDY_H
 #define CANDY_H
-
+#include <stdio.h>
+#include <string.h>
 #include <iostream>
-#include <string>
 
 class Candy
 {
 public:
-    enum COLOR  // change to graphic's later
+    enum COLOR  // to asign color
     {
-        RED = 'R',      //1 for randomizer
-        BLUE = 'B',     //2
-        GREEN = 'G',    //3
-        ORANGE = 'O',   //4
-        YELLOW = 'Y'    //5
+        RED,      //1 for randomizer
+        BLUE,     //2
+        GREEN,    //3
+        ORANGE,   //4
+        YELLOW    //5
     };
 
-    Candy(COLOR color)  : color(color){}
+    Candy(COLOR color)  : color(color){}    //create candy
     ~Candy() {}
-
-    const COLOR color;
 
     COLOR getColor() const  // get color for combo checker
     {
         return color;
     }
 
-    void print()    // print color for testing
+    unsigned char print()    // print color
     {
+        unsigned char color_sign;
         switch(color)
         {
         case RED:
-            std::cout << "R\n";
+             color_sign='R';
             break;
         case BLUE:
-            std::cout << "B\n";
+            color_sign='B';
             break;
         case GREEN:
-            std::cout << "G\n";
+            color_sign='G';
             break;
         case YELLOW:
-            std::cout << "O\n";
+            color_sign='Y';
             break;
         case ORANGE:
-            std::cout << "Y\n";
+            color_sign='O';
             break;
         default:
-            std::cout << "no color\n";
+            color_sign=' ';
             break;
         }
+        return color_sign;
     }
+private:
+    const COLOR color;
 };
 
 #endif // CANDY_H
