@@ -1,5 +1,5 @@
-# NodeJS API
-To connect the Client GUI to the online MongoDB database we made API in NodeJS that runs on a heroku server. The CSV data is send via the MQTT broker from the GUI to the API and then parsed and uploaded. The message is seperated in the following catagories:
+# NodeJS API/MongoDB database
+To store all client orders we set up a database with a schema for the CSV messages. To connect the Client GUI to the online MongoDB database we made API in NodeJS that runs on a heroku server. The CSV data is send via the MQTT broker from the GUI to the API and then parsed and uploaded. The message is seperated in the following catagories:
 
 - customer name
 - customer number
