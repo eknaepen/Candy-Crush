@@ -14,4 +14,4 @@ npm install mqtt
 npm install mongoose
 npm install express
 ```
-
+To deploy it on a heroku server you have to install [heroku cli](https://devcenter.heroku.com/articles/heroku-cli)
